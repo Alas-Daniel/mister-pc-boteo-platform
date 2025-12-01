@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../models/UsuarioModel.php';
 
 class LoginController extends Controller
 {
@@ -11,7 +11,7 @@ class LoginController extends Controller
     {
         session_start();
         $this->db = Database::getConnection();
-        $this->userModel = new User($this->db);
+        $this->userModel = new UsuarioModel($this->db);
     }
 
     public function index()

@@ -28,6 +28,23 @@ class UsuarioModel
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function findByEmail($email)
+    {
+        $sql = "SELECT 
+                u.UsuarioId,
+                u.Email,
+                u.Clave,
+                u.Rol,
+                u.Estado,
+                e.Nombre AS nombre_completo
+            FROM USUARIO u
+            JOIN EMPLEADO e ON u.EmpleadoId = e.EmpleadoId
+            WHERE u.Email = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([$email]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
     public function getById($id)
     {
         $sql = "SELECT 

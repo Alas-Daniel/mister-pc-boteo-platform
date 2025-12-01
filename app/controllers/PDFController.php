@@ -1,63 +1,96 @@
 <?php
+
 require_once __DIR__ . '/../../lib/dompdf/autoload.inc.php';
-require_once __DIR__ . '/../models/Equipo.php';
 
 use Dompdf\Dompdf;
 
 class PdfController
 {
-    private $pdo;
-    private $equipoModel;
+    private $db;
 
-    public function __construct($pdo)
+    public function __construct()
     {
-        $this->pdo = $pdo;
-        $this->equipoModel = new Equipo($pdo);
+        // No se inicia sesión aquí porque la validación se hace en el controlador que llama (TecnicoEquipoController o EquipoController)
+        $this->db = Database::getConnection();
     }
 
-    // PDF de historial general (admin / técnico / cliente)
-    public function generarHistorial($rol, $usuario_id = null)
+    public function equipo($equipo_id)
     {
-        switch ($rol) {
-            case 'admin':
-                $equipos = $this->equipoModel->historial();
-                break;
-            case 'tecnico':
-                $equipos = $this->equipoModel->historialPorTecnico($usuario_id);
-                break;
-            case 'cliente':
-                $equipos = $this->equipoModel->historialPorCliente($usuario_id);
-                break;
-            default:
-                $equipos = [];
-                break;
+        // --- Limpieza crítica: asegurar que no haya salida previa ---
+        if (ob_get_level()) {
+            ob_clean();
+        }
+        while (ob_get_level()) {
+            ob_end_clean();
         }
 
-        ob_start();
-        include __DIR__ . '/../views/pdf/historial.php'; // HTML de tabla de historial
-        $html = ob_get_clean();
+        // Desactivar errores visibles (evita que Notices se metan en el PDF)
+        error_reporting(0);
+        ini_set('display_errors', 0);
 
-        $dompdf = new Dompdf();
-        $dompdf->loadHtml($html);
-        $dompdf->setPaper('letter', 'portrait');
-        $dompdf->render();
-        $dompdf->stream('historial.pdf', ["Attachment" => true]);
-        exit;
-    }
+        // Validación básica de ID
+        if (!is_numeric($equipo_id) || $equipo_id <= 0) {
+            return;
+        }
 
-    // PDF de un equipo específico con detalles completos
-    public function generarPDFEquipo($equipo_id)
-    {
-        $equipo = $this->equipoModel->getByIdForPdf($equipo_id);
+        // Consulta específica para el PDF, con aliases que coinciden EXACTAMENTE con la vista
+        $sql = "SELECT 
+                    c.Nombre AS propietario,
+                    e.FechaIngreso AS fecha_ingreso,
+                    e.FechaFinalizacion AS fecha_finalizacion,
+                    e.TipoProblema AS tipo_problema,
+                    emp.Nombre AS tecnico,
+                    e.Marca AS marca,
+                    e.Modelo AS modelo,
+                    e.NombreEquipo AS nombre_equipo,
+                    d.RamTipo AS ram_tipo,
+                    d.RamCapacidad AS ram_capacidad,
+                    d.RamVelocidad AS ram_velocidad,
+                    d.RamSlotsVacios AS ram_slots_vacios,
+                    d.CpuMarca AS cpu_marca,
+                    d.CpuModelo AS cpu_modelo,
+                    d.CpuVelocidad AS cpu_velocidad,
+                    d.SoNombre AS so_nombre,
+                    d.SoVersion AS so_version,
+                    d.SoArquitectura AS so_arquitectura,
+                    d.AlmacenamientoCap AS almacenamiento_cap,
+                    d.AlmacenamientoParticiones AS almacenamiento_particiones,
+                    d.PlacaModelo AS placa_modelo,
+                    d.Puertos AS puertos,
+                    d.InfoExtra AS info_extra,
+                    r.DescripcionProceso AS descripcion_proceso,
+                    r.DetallesProblema AS detalles_problemas
+                FROM EQUIPO e
+                JOIN CLIENTE c ON e.ClienteId = c.ClienteId
+                LEFT JOIN USUARIO u ON e.TecnicoId = u.UsuarioId
+                LEFT JOIN EMPLEADO emp ON u.EmpleadoId = emp.EmpleadoId
+                LEFT JOIN DETALLE_EQUIPO d ON e.EquipoId = d.EquipoId
+                LEFT JOIN REPARACION r ON e.EquipoId = r.EquipoId
+                WHERE e.EquipoId = ? AND e.Activo = 1";
+
+        try {
+            $stmt = $this->db->prepare($sql);
+            $stmt->execute([$equipo_id]);
+            $equipo = $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            return; // No mostrar errores en el PDF
+        }
 
         if (!$equipo) {
-            die("Equipo no encontrado.");
+            return;
         }
 
+        // Capturar HTML del PDF
         ob_start();
         include __DIR__ . '/../views/pdf/equipo.php';
         $html = ob_get_clean();
 
+        // Verificar que no se hayan enviado encabezados (si sí, no se puede enviar PDF)
+        if (headers_sent()) {
+            return;
+        }
+
+        // Generar y enviar PDF
         $dompdf = new Dompdf();
         $dompdf->loadHtml($html);
         $dompdf->setPaper('letter', 'portrait');

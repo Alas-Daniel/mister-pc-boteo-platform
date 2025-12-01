@@ -58,7 +58,10 @@
                                     <td><?= htmlspecialchars($eq['tipo_problema']) ?></td>
                                     <td><?= htmlspecialchars($eq['estado_actual']) ?></td>
                                     <td>
-                                        <a href="<?= BASE_URL ?>tecnico/equipos/edit/<?= $eq['id'] ?>" class="text-success">Actualizar</a>
+                                        <a href="<?= BASE_URL ?>tecnico/equipos/edit/<?= $eq['id'] ?>" class="text-primary">Actualizar</a>
+                                        <a href="<?= BASE_URL ?>tecnico/equipos/download/<?= $eq['id'] ?>" class="text-success">
+                                            <i class="bi bi-file-earmark-pdf"></i> PDF
+                                        </a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

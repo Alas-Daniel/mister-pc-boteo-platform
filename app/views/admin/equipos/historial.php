@@ -60,7 +60,7 @@
                                     <td><?= htmlspecialchars($equipo['tecnico'] ?? '-') ?></td>
                                     <td><?= htmlspecialchars($equipo['tipo_problema']) ?></td>
                                     <td>
-                                        <a href="<?= BASE_URL ?>admin/download_historial.php?id=<?= $equipo['id'] ?>" class="text-success">
+                                        <a href="<?= BASE_URL ?>admin/equipos/download/<?= $equipo['id'] ?>" class="text-success">
                                             <i class="bi bi-file-earmark-pdf"></i> PDF
                                         </a>
                                     </td>

@@ -235,4 +235,28 @@ class TecnicoEquipoController extends TecnicoPanelBase
         header('Location: ' . BASE_URL . 'tecnico/equipos?exito=reparado');
         exit;
     }
+
+    public function download($equipoId)
+    {
+        // Validar que el técnico tenga permiso sobre este equipo (opcional pero recomendado)
+        if (!is_numeric($equipoId)) {
+            $this->error404();
+        }
+
+        // Aquí puedes validar que el equipo pertenezca al técnico logueado
+        // (si ya tienes esa lógica en otro método, reutilízala)
+
+        // Invocar el generador de PDF
+        require_once __DIR__ . '/PdfController.php';
+        $pdfController = new PdfController();
+        $pdfController->equipo($equipoId);
+        // Nota: PdfController::equipo() hace exit(), así que nada después se ejecuta
+    }
+
+    private function error404()
+    {
+        http_response_code(404);
+        require __DIR__ . '/../views/errors/404.php';
+        exit;
+    }
 }

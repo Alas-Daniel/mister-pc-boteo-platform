@@ -118,6 +118,9 @@
                                     <td>
                                         <a href="<?= BASE_URL ?>admin/equipos/edit/<?= $eq['id'] ?>" class="text-success">Editar</a>
                                         <a href="#" class="text-danger" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $eq['id'] ?>">Eliminar</a>
+                                        <a href="<?= BASE_URL ?>admin/equipos/download/<?= $eq['id'] ?>" class="text-primary">
+                                            <i class="bi bi-file-earmark-pdf"></i> PDF
+                                        </a>
                                     </td>
                                 </tr>
 

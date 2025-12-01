@@ -46,7 +46,7 @@
                                     <td><?= !empty($eq['fecha_finalizacion']) ? htmlspecialchars(date('d/m/Y', strtotime($eq['fecha_finalizacion']))) : 'N/A' ?></td>
                                     <td><?= htmlspecialchars($eq['tipo_problema']) ?></td>
                                     <td>
-                                        <a href="<?= BASE_URL ?>tecnico/equipos/download/<?= $eq['id'] ?>" class="text-success">
+                                        <a href="<?= BASE_URL ?>tecnico/equipos/download/<?= $eq['id'] ?>">
                                             <i class="bi bi-file-earmark-pdf"></i> PDF
                                         </a>
                                     </td>
