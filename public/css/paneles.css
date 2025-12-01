@@ -1,0 +1,105 @@
+:root {
+    --color-oscuro: #08192B;
+    --color-azul: #1D5591;
+    --color-azul-light: #35669B;
+    --primary-color: #3a7bd6;
+    --color-card-1: #ED9828;
+    --color-card-2: #C14E99;
+    --color-card-3: #37B84F;
+    --color-card-4: #398C99;
+
+}
+
+.bg-primary {
+    background-color: var(--color-oscuro) !important;
+
+}
+
+.bg-light {
+    background-color: var(--color-azul) !important;
+
+}
+
+.bg-active {
+    background-color: var(--color-azul-light);
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    /* opcional para evitar scroll general */
+    overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+
+    html,
+    body {
+        overflow: hidden;
+    }
+}
+
+.number-size {
+    font-size: 5rem;
+}
+
+.bg-yellow {
+    background-color: var(--color-card-1);
+}
+
+.bg-pink {
+    background-color: var(--color-card-2);
+}
+
+.bg-green {
+    background-color: var(--color-card-3);
+}
+
+.bg-light-blue {
+    background-color: var(--color-card-4);
+}
+
+.text-yellow {
+    color: var(--color-card-1);
+}
+
+.text-pink {
+    color: var(--color-card-2);
+}
+
+.text-green {
+    color: var(--color-card-3);
+}
+
+.text-light-blue {
+    color: var(--color-card-4);
+}
+
+.sidebar {
+    overflow-y: auto;
+    /* Para que permita scroll cuando haya más contenido */
+}
+
+.img-thumbnail-fixed {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    /* llena el recuadro manteniendo proporción y recortando el exceso */
+    border-radius: 5px;
+    /* opcional: esquinas un poco redondeadas */
+}
+
+
+/* En pantallas md+ */
+@media (min-width: 768px) {
+    .sidebar {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: hidden;
+        /* Sin scroll en pantallas grandes */
+    }
+}

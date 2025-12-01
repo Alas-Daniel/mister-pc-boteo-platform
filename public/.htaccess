@@ -1,0 +1,27 @@
+# Habilitar Rewrite
+RewriteEngine On
+
+# Base del proyecto
+RewriteBase /mister-pc-boteo/public/
+
+# Evitar que se accedan directamente a archivos que existen
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirigir todo al index.php para el router MVC
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+# Bloquear acceso a archivos sensibles
+<FilesMatch "^(\.htaccess|\.env|composer\.json|composer\.lock|config\.env)">
+    Require all denied
+</FilesMatch>
+
+# prevenir listado de directorios
+Options -Indexes
+
+# Seguridad básica de cabeceras
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
