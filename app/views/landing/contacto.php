@@ -15,8 +15,7 @@
             <div class="row h-100 align-items-center mx-lg-0">
                 <div class="col-md-6">
                     <h1 class="fw-semibold display-5 mb-4">¿Tienes alguna duda?</h1>
-                    <p>Conoce la historia, misión y valores que impulsan a Mister Pc Boteo a ser líderes en el sector tecnológico
-                    </p>
+                    <p> Estamos aquí para ayudarte. Si tienes preguntas sobre nuestros servicios, repuestos o tiempos de reparación, no dudes en contactarnos. Te responderemos con claridad y rapidez.</p>
                 </div>
             </div>
         </div>

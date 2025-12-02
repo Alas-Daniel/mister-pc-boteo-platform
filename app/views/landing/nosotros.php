@@ -10,12 +10,12 @@
 
     <!-- Hero Inicia -->
     <section class="hero position-relative text-white px-2 px-lg-0">
-        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-25"></div>
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50"></div>
         <div class="container-lg h-100 position-relative">
             <div class="row h-100 align-items-center mx-lg-0">
                 <div class="col-md-6">
                     <h1 class="fw-semibold display-5 mb-4">¿Quiénes somos?</h1>
-                    <p>Conoce la historia, misión y valores que impulsan a Mister Pc Boteo a ser líderes en el sector
+                    <p>Conoce la historia, misión y valores que impulsan a Mister PC Boteo a ser líderes en el sector
                         tecnológico</p>
                 </div>
             </div>
@@ -93,56 +93,50 @@
             <div class="row align-items-center text-md-start mt-5">
                 <div class="col-md-4 col-sm-6 mb-4 d-flex">
                     <div class="card-value d-flex flex-column p-4 text-center">
-                        <img src="./img/calidad.png" class="img-valor d-block mx-auto mb-3" alt="Innovación">
+                        <img src="https://res.cloudinary.com/drztldzvn/image/upload/v1753135278/calidad_kducpv.png" class="img-valor d-block mx-auto mb-3" alt="Innovación">
                         <h5 class="fw-bold text-center">Calidad</h5>
-                        <p>En TechnoSpark, fomentamos ideas nuevas y soluciones creativas que impulsan nuestro
-                            crecimiento.</p>
+                        <p>Trabajamos con repuestos confiables, herramientas adecuadas y procesos rigurosos para garantizar resultados duraderos en cada reparación.</p>
                     </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6 mb-4 d-flex">
                     <div class="card-value d-flex flex-column p-4 text-center">
-                        <img src="./img/innovacion.png" class="img-valor d-block mx-auto mb-3" alt="Innovación">
+                        <img src="https://res.cloudinary.com/drztldzvn/image/upload/v1753135279/innovacion_a7u73f.png" class="img-valor d-block mx-auto mb-3" alt="Innovación">
                         <h5 class="fw-bold text-center">Innovación</h5>
-                        <p>En TechnoSpark, fomentamos ideas nuevas y soluciones creativas que impulsan nuestro
-                            crecimiento.</p>
+                        <p>Aplicamos métodos eficientes y actualizamos constantemente nuestros conocimientos para ofrecer soluciones modernas y efectivas en cada reparación.</p>
                     </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6 mb-4 d-flex">
                     <div class="card-value d-flex flex-column p-4 text-center">
-                        <img src="./img/honestidad.png" class="img-valor d-block mx-auto mb-3" alt="Innovación">
+                        <img src="https://res.cloudinary.com/drztldzvn/image/upload/v1753135278/honestidad_nqpgik.png" class="img-valor d-block mx-auto mb-3" alt="Innovación">
                         <h5 class="fw-bold text-center">Honestidad</h5>
-                        <p>En TechnoSpark, fomentamos ideas nuevas y soluciones creativas que impulsan nuestro
-                            crecimiento.</p>
+                        <p>Tratamos a cada cliente con transparencia: sin cobros ocultos, sin reparaciones innecesarias y con un diagnóstico claro desde el primer momento.</p>
                     </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6 mb-4 d-flex">
                     <div class="card-value d-flex flex-column p-4 text-center">
-                        <img src="./img/pasion.png" class="img-valor d-block mx-auto mb-3" alt="Innovación">
-                        <h5 class="fw-bold text-center">Pasion</h5>
-                        <p>En TechnoSpark, fomentamos ideas nuevas y soluciones creativas que impulsan nuestro
-                            crecimiento.</p>
+                        <img src="https://res.cloudinary.com/drztldzvn/image/upload/v1753135285/pasion_kqfupg.png" class="img-valor d-block mx-auto mb-3" alt="Innovación">
+                        <h5 class="fw-bold text-center">Pasión</h5>
+                        <p>Detrás de cada reparación hay un verdadero entusiasmo por la tecnología, el cuidado del equipo del cliente y el deseo de hacer las cosas bien.</p>
                     </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6 mb-4 d-flex">
                     <div class="card-value d-flex flex-column p-4 text-center">
-                        <img src="./img/responsabilidad.png" class="img-valor d-block mx-auto mb-3" alt="Innovación">
+                        <img src="https://res.cloudinary.com/drztldzvn/image/upload/v1753135290/responsabilidad_bn6vge.png" class="img-valor d-block mx-auto mb-3" alt="Innovación">
                         <h5 class="fw-bold text-center">Responsabilidad</h5>
-                        <p>En TechnoSpark, fomentamos ideas nuevas y soluciones creativas que impulsan nuestro
-                            crecimiento.</p>
+                        <p>Cuidamos cada equipo como si fuera nuestro, cumpliendo con los tiempos, los estándares técnicos y el compromiso de entregar un trabajo bien hecho.</p>
                     </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6 mb-4 d-flex">
                     <div class="card-value d-flex flex-column p-4 text-center">
-                        <img src="./img/orientacion-cliente.png" class="img-valor d-block mx-auto mb-3"
+                        <img src="https://res.cloudinary.com/drztldzvn/image/upload/v1753135284/orientacion-cliente_ctitrb.png" class="img-valor d-block mx-auto mb-3"
                             alt="Innovación">
-                        <h5 class="fw-bold text-center">Cercania</h5>
-                        <p>En TechnoSpark, fomentamos ideas nuevas y soluciones creativas que impulsan nuestro
-                            crecimiento.</p>
+                        <h5 class="fw-bold text-center">Cercanía</h5>
+                        <p>Te explicamos cada paso del proceso en términos claros, sin tecnicismos innecesarios, porque creemos que la confianza nace de una comunicación honesta y cercana.</p>
                     </div>
                 </div>
 

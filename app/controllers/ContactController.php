@@ -6,7 +6,7 @@ class ContactController extends Controller
     {
         $head = [
             'title' => 'Contáctanos - Mister PC Boteo',
-            'heroImage' => 'https://res.cloudinary.com/drztldzvn/image/upload/v1758338073/hero-contacto.jpg'
+            'heroImage' => 'https://res.cloudinary.com/drztldzvn/image/upload/v1753135286/nosotros_jbfyu8.png'
         ];
 
         // Enviar a la vista

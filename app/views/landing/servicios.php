@@ -10,13 +10,12 @@
 
     <!-- Hero Inicia -->
     <section class="hero position-relative text-white px-2 px-lg-0">
-        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-25"></div>
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50"></div>
         <div class="container-lg h-100 position-relative">
             <div class="row h-100 align-items-center mx-lg-0">
                 <div class="col-md-6">
                     <h1 class="fw-semibold display-5 mb-4">Nuestros Servicios</h1>
-                    <p>Conoce la historia, misión y valores que impulsan a Mister Pc Boteo a ser líderes en el sector
-                        tecnológico</p>
+                    <p>En Mister PC Boteo nos especializamos en la reparación de equipos informáticos. Ofrecemos soluciones rápidas, confiables y profesionales para que tu dispositivo vuelva a funcionar como nuevo.</p>
                 </div>
             </div>
         </div>
@@ -31,16 +30,18 @@
                 <!-- Reparación de hardware -->
                 <div class="col-lg-4">
                     <div class=" bg-white p-5 rounded h-100">
-                        <img src="./img/mantenimiento.png" alt="mantenimiento" class="img-fluid" width="130">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-3"
+                            style="width:100px; height:100px; font-size:2.5rem;">
+                            <i class="bi bi-cpu"></i>
+                        </div>
                         <h5 class="fw-semibold my-4 text-primary">Reparación de hardware</h5>
-                        <p class="text-muted small mt-3">Diagnóstico y reparación de problemas en computadoras de
-                            escritorio, laptops, servidores y otros dispositivos electrónicos.</p>
+                        <p class="text-muted small mt-3">Diagnóstico preciso y reparación de fallas en componentes físicos de computadoras de escritorio, laptops y servidores.</p>
                         <ul class="text-start small my-4">
-                            <li>Reemplazo de componentes defectuosos.</li>
-                            <li>Reparación de placa madre.</li>
-                            <li>Soluciones de arranque</li>
+                            <li>Reemplazo de componentes defectuosos</li>
+                            <li>Reparación de placas base y circuitos</li>
+                            <li>Solución de problemas de encendido y arranque</li>
                         </ul>
-                        <p class="fw-semibold text-primary">Desde $45.00</p>
+                        <p class="fw-semibold text-primary">Desde $35.00</p>
                         <a href="#" class="btn btn-primary">Solicitar servicio</a>
                     </div>
                 </div>
@@ -48,16 +49,18 @@
                 <!-- Reparación de hardware -->
                 <div class="col-lg-4">
                     <div class=" bg-white p-5 rounded h-100">
-                        <img src="./img/reparar.png" alt="hardware" class="img-fluid" width="130">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-3"
+                            style="width:100px; height:100px; font-size:2.5rem;">
+                            <i class="bi bi-tools"></i>
+                        </div>
                         <h5 class="fw-semibold my-4 text-primary">Mantenimiento Preventivo</h5>
-                        <p class="text-muted small mt-3">Diagnóstico y reparación de problemas en computadoras de
-                            escritorio, laptops, servidores y otros dispositivos electrónicos.</p>
+                        <p class="text-muted small mt-3">Mantenimiento integral para prevenir fallas y prolongar la vida útil de tu equipo. Incluye limpieza profunda, revisión de componentes y optimización del rendimiento.</p>
                         <ul class="text-start small my-4">
-                            <li>Reemplazo de componentes defectuosos.</li>
-                            <li>Reparación de placa madre.</li>
-                            <li>Soluciones de arranque</li>
+                            <li>Limpieza interna y externa de tu computadora</li>
+                            <li>Revisión térmica y cambio de pasta térmica</li>
+                            <li>Optimización del sistema operativo</li>
                         </ul>
-                        <p class="fw-semibold text-primary">Desde $45.00</p>
+                        <p class="fw-semibold text-primary">Desde $35.00</p>
                         <a href="#" class="btn btn-primary">Solicitar servicio</a>
                     </div>
                 </div>
@@ -65,16 +68,18 @@
                 <!-- Reparación de hardware -->
                 <div class="col-lg-4">
                     <div class=" bg-white p-5 rounded h-100">
-                        <img src="./img/repuestos.png" alt="hardware" class="img-fluid" width="130">
-                        <h5 class="fw-semibold my-4 text-primary">Mantenimiento de Hardware</h5>
-                        <p class="text-muted small mt-3">Diagnóstico y reparación de problemas en computadoras de
-                            escritorio, laptops, servidores y otros dispositivos electrónicos.</p>
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-3"
+                            style="width:100px; height:100px; font-size:2.5rem;">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <h5 class="fw-semibold my-4 text-primary">Reparación de Software</h5>
+                        <p class="text-muted small mt-3">Solución de problemas relacionados con el sistema operativo, programas, virus, lentitud y errores de funcionamiento en tu equipo.</p>
                         <ul class="text-start small my-4">
-                            <li>Reemplazo de componentes defectuosos.</li>
-                            <li>Reparación de placa madre.</li>
-                            <li>Soluciones de arranque</li>
+                            <li>Instalación y configuración de sistemas operativos</li>
+                            <li>Eliminación de virus y malware</li>
+                            <li>Optimización del rendimiento y corrección de errores</li>
                         </ul>
-                        <p class="fw-semibold text-primary">Desde $45.00</p>
+                        <p class="fw-semibold text-primary">Desde $35.00</p>
                         <a href="#" class="btn btn-primary">Solicitar servicio</a>
                     </div>
                 </div>
@@ -88,7 +93,7 @@
         <div class="container-lg py-5 text-center">
             <div class="w-75 mx-auto">
                 <h4 class="fw-semibold text-white mb-4">¿Quieres un servicio personalizado para tu equipo?</h4>
-                <p class="text-white my-4">En Mister Pc Boteo, nos comprometemos a ofrecer soluciones tecnológicas de
+                <p class="text-white my-4">En Mister PC Boteo, nos comprometemos a ofrecer soluciones tecnológicas de
                     alta calidad y un servicio al cliente excepcional. Nuestro equipo de expertos está listo para
                     ayudarte con cualquier necesidad relacionada con hardware y software.</p>
                 <button href="#" class="btn btn-light text-primary fw-semibold">¡Contáctanos ahora!</button>

@@ -29,7 +29,7 @@ class ProductsController extends Controller
 
         $head = [
             'title' => 'Productos - Mister PC Boteo',
-            'heroImage' => 'https://res.cloudinary.com/drztldzvn/image/upload/v1758338073/hero-productos.jpg'
+            'heroImage' => 'https://res.cloudinary.com/drztldzvn/image/upload/v1764697413/productos_hero_vqzvya.jpg'
         ];
 
         $this->view('landing/productos', [

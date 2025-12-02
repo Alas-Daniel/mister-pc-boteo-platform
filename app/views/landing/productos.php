@@ -10,13 +10,12 @@
 
     <!-- Hero Inicia -->
     <section class="hero position-relative text-white px-2 px-lg-0">
-        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-25"></div>
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50"></div>
         <div class="container-lg h-100 position-relative">
             <div class="row h-100 align-items-center mx-lg-0">
                 <div class="col-md-6">
                     <h1 class="fw-semibold display-5 mb-4">Nuestros Productos y repuestos</h1>
-                    <p>Conoce la historia, misión y valores que impulsan a Mister Pc Boteo a ser líderes en el sector
-                        tecnológico</p>
+                    <p>Contamos con una selección de productos y repuestos de calidad, especialmente destinados a la reparación y mantenimiento de computadoras.</p>
                 </div>
             </div>
         </div>

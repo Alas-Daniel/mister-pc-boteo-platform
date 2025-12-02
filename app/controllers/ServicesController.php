@@ -6,7 +6,7 @@ class ServicesController extends Controller
     {
         $head = [
             'title' => 'Servicios - Mister PC Boteo',
-            'heroImage' => 'https://res.cloudinary.com/drztldzvn/image/upload/v1758338073/hero_lbtcnh.jpg'
+            'heroImage' => 'https://res.cloudinary.com/drztldzvn/image/upload/v1764696577/nuestros_servicios_uezwp7.jpg'
         ];
 
         $this->view('landing/servicios', [

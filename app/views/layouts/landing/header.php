@@ -10,8 +10,8 @@ $loggedIn = isset($_SESSION['usuario_id']);
 
         <!-- Logo -->
         <a href="<?= BASE_URL ?>" class="navbar-brand d-flex align-items-center">
-            <img src="https://res.cloudinary.com/drztldzvn/image/upload/v1753133485/logo-mr-pc_l1rh9t.png"
-                alt="Logo Mister Pc Boteo" width="70" class="img-fluid">
+            <img src="https://res.cloudinary.com/drztldzvn/image/upload/v1764699917/Logo_Mister_PC_Boteo_baspdq.svg"
+                alt="Logo Mister Pc Boteo" width="70" class="img-fluid rounded">
             <span class="ms-2 fw-bold text-primary">Mister PC Boteo</span>
         </a>
 
