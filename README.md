@@ -98,7 +98,7 @@ En desarrollo. Se están incorporando mejoras como:
 
 Desarrollado por:
 - Daniel Alas – Estudiante de Ingeniería en Sistemas y Computación.
-- Cesar Francisco Ramirez Chavez - Estudiante de Tecnico en Desarrollo de Software
+- Cesar Ramirez - Estudiante de Tecnico en Desarrollo de Software
 
 © 2025 Mister PC Boteo. Todos los derechos reservados.
 
