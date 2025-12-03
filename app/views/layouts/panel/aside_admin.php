@@ -34,7 +34,7 @@
                 <span>Clientes</span>
             </a>
 
-            <a href="<?= BASE_URL ?>admin/gestion-productos" class="nav-link text-center text-white rounded d-flex flex-column">
+            <a href="<?= BASE_URL ?>admin/productos" class="nav-link text-center text-white rounded d-flex flex-column">
                 <i class="bi bi-box-seam-fill fs-3"></i>
                 <span>Productos</span>
             </a>

@@ -26,7 +26,7 @@ class Router
             'admin/usuarios'          => 'UsuarioController',
             'admin/clientes'          => 'ClienteController',
             'admin/empleados'         => 'EmpleadoController',
-            'admin/gestion-productos' => 'ProductoController',
+            'admin/productos' => 'ProductoController',
         ];
 
         // Rutas del panel de técnico

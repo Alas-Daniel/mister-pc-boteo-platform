@@ -38,7 +38,7 @@
 
             <!-- Filtrar por categoría -->
             <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                <form method="get" class="mb-3">
+                <form method="get" class="mb-2">
                     <select name="categoria_filtro" class="form-select" onchange="this.form.submit()">
                         <option value="">-- Filtrar por categoría --</option>
                         <?php foreach ($categorias as $cat): ?>
@@ -113,7 +113,7 @@
                                     </td>
                                     <td>
                                         <!-- Botón para destacar / quitar destacado -->
-                                        <a href="<?= BASE_URL ?>admin/gestion-productos?destacar_producto=<?= $prod['id'] ?>&estado=<?= $prod['destacado'] ? 0 : 1 ?>"
+                                        <a href="<?= BASE_URL ?>admin/productos?destacar_producto=<?= $prod['id'] ?>&estado=<?= $prod['destacado'] ? 0 : 1 ?>"
                                             class="btn btn-sm <?= $prod['destacado'] ? 'btn-warning' : 'btn-outline-warning' ?>"
                                             title="<?= $prod['destacado'] ? 'Quitar destacado' : 'Marcar como destacado' ?>">
                                             <i class="bi <?= $prod['destacado'] ? 'bi-star-fill' : 'bi-star' ?>"></i>
@@ -138,7 +138,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                                <a href="<?= BASE_URL ?>admin/gestion-productos?eliminar_producto=<?= $prod['id'] ?>&categoria_filtro=<?= $categoria_id ?>" class="btn btn-danger">Eliminar</a>
+                                                <a href="<?= BASE_URL ?>admin/productos?eliminar_producto=<?= $prod['id'] ?>&categoria_filtro=<?= $categoria_id ?>" class="btn btn-danger">Eliminar</a>
                                             </div>
                                         </div>
                                     </div>
@@ -168,8 +168,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" action="<?= BASE_URL ?>gestion-productos">
-                        <input type="hidden" name="url" value="gestion-productos">
+                    <form method="POST" action="<?= BASE_URL ?>admin/productos">
+                        <input type="hidden" name="url" value="productos">
                         <div class="mb-3">
                             <label class="form-label">Nombre del producto</label>
                             <input type="text" name="nombre_producto" class="form-control" placeholder="Ej: Tarjeta Madre Asus" required>
@@ -238,8 +238,8 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body">
-                        <form method="POST" action="<?= BASE_URL ?>admin/gestion-productos">
-                            <input type="hidden" name="url" value="gestion-productos">
+                        <form method="POST" action="<?= BASE_URL ?>admin/productos">
+                            <input type="hidden" name="url" value="productos">
                             <input type="hidden" name="id_producto" value="<?= $prod['id'] ?>">
                             <div class="mb-3">
                                 <label class="form-label">Nombre del producto</label>
@@ -314,8 +314,8 @@
                 </div>
                 <div class="modal-body">
                     <!-- Formulario agregar nueva categoría -->
-                    <form method="POST" class="mb-3 d-flex" action="<?= BASE_URL ?>admin/gestion-productos">
-                        <input type="hidden" name="url" value="gestion-productos">
+                    <form method="POST" class="mb-3 d-flex" action="<?= BASE_URL ?>admin/productos">
+                        <input type="hidden" name="url" value="productos">
                         <input type="text" name="nombre_categoria" class="form-control me-2" placeholder="Nueva categoría" required>
                         <button type="submit" name="agregar_categoria" class="btn btn-success">Agregar</button>
                     </form>
@@ -352,8 +352,8 @@
             <div class="modal fade" id="editCategoria<?= $cat['id']; ?>" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <form method="POST" action="<?= BASE_URL ?>admin/gestion-productos">
-                            <input type="hidden" name="url" value="gestion-productos">
+                        <form method="POST" action="<?= BASE_URL ?>admin/productos">
+                            <input type="hidden" name="url" value="productos">
                             <div class="modal-header">
                                 <h5 class="modal-title">Editar Categoría</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -382,8 +382,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" action="<?= BASE_URL ?>admin/gestion-productos">
-                        <input type="hidden" name="url" value="gestion-productos">
+                    <form method="POST" action="<?= BASE_URL ?>admin/productos">
+                        <input type="hidden" name="url" value="productos">
                         <div class="mb-3">
                             <label class="form-label">Nombre del proveedor</label>
                             <input type="text" name="nombre_proveedor" class="form-control" placeholder="Ej: Proveedor XYZ" required>
@@ -433,7 +433,7 @@
                                         <td><?= $prod['id'] ?></td>
                                         <td><?= htmlspecialchars($prod['nombre']) ?></td>
                                         <td>
-                                            <a href="<?= BASE_URL ?>admin/gestion-productos?activar_producto=<?= $prod['id'] ?>" class="btn btn-success btn-sm">
+                                            <a href="<?= BASE_URL ?>admin/productos?activar_producto=<?= $prod['id'] ?>" class="btn btn-success btn-sm">
                                                 Activar
                                             </a>
                                         </td>

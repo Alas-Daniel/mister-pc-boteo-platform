@@ -71,6 +71,13 @@ class EmpleadoModel
         ]);
     }
 
+    public function active(int $id)
+    {
+        $stmt = $this->db->prepare("UPDATE EMPLEADO SET Estado = 1 WHERE EmpleadoId = ?");
+        return $stmt->execute([$id]);
+    }
+
+
     public function delete($id)
     {
         // Soft delete

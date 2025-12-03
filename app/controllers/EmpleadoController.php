@@ -34,7 +34,7 @@ class EmpleadoController extends Controller
     public function crear()
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            header('Location: ' . BASE_URL . 'empleados');
+            header('Location: ' . BASE_URL . 'admin/empleados');
             exit;
         }
 
@@ -56,7 +56,7 @@ class EmpleadoController extends Controller
         $stmt->execute([$data['dui']]);
         if ($stmt->fetch()) {
             $_SESSION['error'] = 'Ya existe un empleado activo con ese DUI.';
-            header('Location: ' . BASE_URL . 'empleados');
+            header('Location: ' . BASE_URL . 'admin/empleados');
             exit;
         }
 
@@ -67,20 +67,20 @@ class EmpleadoController extends Controller
             $_SESSION['error'] = 'Error al registrar el empleado.';
         }
 
-        header('Location: ' . BASE_URL . 'empleados');
+        header('Location: ' . BASE_URL . 'admin/empleados');
         exit;
     }
 
     public function editar()
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            header('Location: ' . BASE_URL . 'empleados');
+            header('Location: ' . BASE_URL . 'admin/empleados');
             exit;
         }
 
         $id = (int)($_POST['id'] ?? 0);
         if (!$id) {
-            header('Location: ' . BASE_URL . 'empleados');
+            header('Location: ' . BASE_URL . 'admin/empleados');
             exit;
         }
 
@@ -94,7 +94,7 @@ class EmpleadoController extends Controller
 
         if (empty($data['nombre']) || empty($data['dui']) || empty($data['cargo_id'])) {
             $_SESSION['error'] = 'Nombre, DUI y cargo son obligatorios.';
-            header('Location: ' . BASE_URL . 'empleados');
+            header('Location: ' . BASE_URL . 'admin/empleados');
             exit;
         }
 
@@ -103,7 +103,7 @@ class EmpleadoController extends Controller
         $stmt->execute([$data['dui'], $id]);
         if ($stmt->fetch()) {
             $_SESSION['error'] = 'Ya existe otro empleado activo con ese DUI.';
-            header('Location: ' . BASE_URL . 'empleados');
+            header('Location: ' . BASE_URL . 'admin/empleados');
             exit;
         }
 
@@ -114,7 +114,26 @@ class EmpleadoController extends Controller
             $_SESSION['error'] = 'Error al actualizar el empleado.';
         }
 
-        header('Location: ' . BASE_URL . 'empleados');
+        header('Location: ' . BASE_URL . 'admin/empleados');
+        exit;
+    }
+
+    public function activar($id)
+    {
+        $id = (int)$id;
+        if ($id <= 0) {
+            header('Location: ' . BASE_URL . 'admin/empleados');
+            exit;
+        }
+
+        try {
+            $this->empleadoModel->active($id); // Debe existir en tu modelo
+            $_SESSION['success'] = 'Empleado reactivado exitosamente.';
+        } catch (Exception $e) {
+            $_SESSION['error'] = 'Error al reactivar el empleado.';
+        }
+
+        header('Location: ' . BASE_URL . 'admin/empleados');
         exit;
     }
 
@@ -122,7 +141,7 @@ class EmpleadoController extends Controller
     {
         $id = (int)$id;
         if ($id <= 0) {
-            header('Location: ' . BASE_URL . 'empleados');
+            header('Location: ' . BASE_URL . 'admin/empleados');
             exit;
         }
 
@@ -133,7 +152,7 @@ class EmpleadoController extends Controller
             $_SESSION['error'] = 'Error al desactivar el empleado.';
         }
 
-        header('Location: ' . BASE_URL . 'empleados');
+        header('Location: ' . BASE_URL . 'admin/empleados');
         exit;
     }
 

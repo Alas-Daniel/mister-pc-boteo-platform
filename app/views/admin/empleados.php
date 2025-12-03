@@ -80,12 +80,19 @@
                                         data-bs-target="#modalEditarEmpleado<?= $emp['id'] ?>">
                                         Editar
                                     </a> |
-                                    <a href="#" class="text-danger"
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#modalDesactivarEmpleado<?= $emp['id'] ?>">
-                                        Desactivar
-                                    </a>
-                                </td>
+                                    <?php if ($emp['estado']): ?>
+                                        <a href="<?= BASE_URL ?>admin/empleados/desactivar/<?= $emp['id'] ?>"
+                                            class="text-danger"
+                                            onclick="return confirm('¿Está seguro que desea desactivar a <?= addslashes($emp['nombre']) ?>?')">
+                                            Desactivar
+                                        </a>
+                                    <?php else: ?>
+                                        <a href="<?= BASE_URL ?>admin/empleados/activar/<?= $emp['id'] ?>"
+                                            class="text-success"
+                                            onclick="return confirm('¿Está seguro que desea activar a <?= addslashes($emp['nombre']) ?>?')">
+                                            Activar
+                                        </a>
+                                    <?php endif; ?>
                             </tr>
 
                             <!-- Modal Editar Empleado -->
@@ -141,28 +148,6 @@
                                 </div>
                             </div>
 
-                            <!-- Modal Desactivar Empleado -->
-                            <div class="modal fade" id="modalDesactivarEmpleado<?= $emp['id'] ?>" tabindex="-1">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Desactivar Empleado</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            ¿Está seguro que desea desactivar al empleado
-                                            <strong><?= htmlspecialchars($emp['nombre']) ?></strong>?
-                                            <br>
-                                            <small class="text-muted">Esta acción no elimina al empleado, solo lo marca como inactivo.</small>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                            <a href="<?= BASE_URL ?>empleados/desactivar/<?= $emp['id'] ?>" class="btn btn-danger">Desactivar</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                             <!-- Modal Crear Usuario -->
                             <?php if (!$emp['tiene_usuario']): ?>
                                 <div class="modal fade" id="modalCrearUsuario<?= $emp['id'] ?>" tabindex="-1">
@@ -172,7 +157,7 @@
                                                 <h5 class="modal-title">Crear Usuario para: <?= htmlspecialchars($emp['nombre']) ?></h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                             </div>
-                                            <form method="POST" action="<?= BASE_URL ?>admin/empleados/crear_usuario"> <!-- ✅ CAMBIADO A _ -->
+                                            <form method="POST" action="<?= BASE_URL ?>admin/empleados/crear_usuario">
                                                 <input type="hidden" name="empleado_id" value="<?= $emp['id'] ?>">
                                                 <div class="modal-body">
                                                     <div class="mb-3">
@@ -230,11 +215,11 @@
                             <input type="text" class="form-control" name="dui" maxlength="10" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Teléfono</label>
+                            <label class="form-label">Teléfono (sin guiones) *</label>
                             <input type="text" class="form-control" name="telefono">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Dirección</label>
+                            <label class="form-label">Dirección *</label>
                             <textarea class="form-control" name="direccion" rows="2"></textarea>
                         </div>
                         <div class="mb-3">

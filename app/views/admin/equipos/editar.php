@@ -140,7 +140,7 @@
                                    value="<?= htmlspecialchars($equipo['cpu_velocidad'] ?? '') ?>">
                         </div>
 
-                        <div class "col-md-4">
+                        <div class="col-md-4">
                             <h6>SISTEMA OPERATIVO</h6>
                             <label class="form-label fw-semibold">Nombre:</label>
                             <input type="text" name="so_nombre" class="form-control mb-2" 

@@ -252,7 +252,7 @@ class ProductoController extends Controller
         $params = $_GET;
         unset($params['eliminar_producto'], $params['activar_producto'], $params['destacar_producto'], $params['estado'], $params['eliminar_categoria']);
         $query = http_build_query($params);
-        $url = BASE_URL . 'gestion-productos';
+        $url = BASE_URL . 'admin/productos';
         if ($query) {
             $url .= '?' . $query;
         }
