@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../models/ProductoModel.php';
 
+//Controller de Inicio (landing)
 class HomeController extends Controller
 {
     private $db;

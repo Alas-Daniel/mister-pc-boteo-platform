@@ -42,7 +42,7 @@ class Router
         $params = [];
         $matched = false;
 
-        // 1. Buscar en rutas de administrador
+        // Buscar en rutas de administrador
         $urlPath = implode('/', $segments);
         foreach ($panelRoutes as $route => $controller) {
             if ($urlPath === $route) {
@@ -62,7 +62,7 @@ class Router
             }
         }
 
-        // 2. Si no coincidió, buscar en rutas de técnico
+        // Si no coincidió, buscar en rutas de técnico
         if (!$matched) {
             foreach ($tecnicoRoutes as $route => $controller) {
                 if ($urlPath === $route) {
@@ -83,7 +83,7 @@ class Router
             }
         }
 
-        // 3. Si aún no coincide, tratar como ruta pública
+        // Si aún no coincide, tratar como ruta pública
         if (!$matched) {
             $segment = $segments[0] ?? '';
             $controllerName = $aliases[$segment] ?? ucfirst($segment) . 'Controller';

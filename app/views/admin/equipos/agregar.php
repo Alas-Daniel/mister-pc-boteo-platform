@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 
+<!-- Head -->
 <?php include __DIR__ . '/../../layouts/panel/head.php'; ?>
 
 <body class="vh-100 d-flex flex-column">
 
+    <!-- Header -->
     <?php include __DIR__ . '/../../layouts/panel/header.php'; ?>
+
     <div class="flex-grow-1 d-flex flex-column flex-md-row" style="min-height: 0;">
+
+        <!-- Aside admin -->
         <?php include __DIR__ . '/../../layouts/panel/aside_admin.php'; ?>
 
         <main class="flex-grow-1 overflow-auto p-4">

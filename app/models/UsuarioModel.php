@@ -1,5 +1,6 @@
 <?php
 
+// Modelo para usuario
 class UsuarioModel
 {
     private $db;

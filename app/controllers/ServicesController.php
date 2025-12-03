@@ -1,5 +1,6 @@
 <?php
 
+//Controller de Nuestros servicios (landing)
 class ServicesController extends Controller
 {
     public function index()

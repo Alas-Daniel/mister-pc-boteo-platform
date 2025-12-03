@@ -1,5 +1,6 @@
 <?php
 
+// Modelo para cliente
 class ClienteModel
 {
     private $db;

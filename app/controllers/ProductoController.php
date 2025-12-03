@@ -4,6 +4,7 @@ require_once __DIR__ . '/../models/ProductoModel.php';
 require_once __DIR__ . '/../models/CategoriaModel.php';
 require_once __DIR__ . '/../models/ProveedorModel.php';
 
+//Gestion de productos en admin
 class ProductoController extends Controller
 {
     private $db;

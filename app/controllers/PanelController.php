@@ -1,8 +1,8 @@
 <?php
 
-// Importante: incluir la clase base si no usas autoloader
 require_once __DIR__ . '/../core/AdminController.php';
 
+// Inicio de panel de admin
 class PanelController extends AdminController
 {
     public function index()

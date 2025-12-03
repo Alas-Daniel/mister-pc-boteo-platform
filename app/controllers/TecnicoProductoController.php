@@ -4,6 +4,7 @@ require_once __DIR__ . '/../models/ProductoModel.php';
 require_once __DIR__ . '/../models/CategoriaModel.php';
 require_once __DIR__ . '/../core/TecnicoPanelBase.php';
 
+//Gestion de productos desde tecnico
 class TecnicoProductoController extends TecnicoPanelBase
 {
     private $productoModel;

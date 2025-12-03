@@ -6,6 +6,7 @@
 
 <body>
 
+    <!-- Header -->
     <?php include __DIR__ . '/../layouts/landing/header.php'; ?>
 
     <!-- Hero -->
@@ -84,7 +85,7 @@
 
             <h3 class="text-primary fw-bold mb-4 text-center">Productos Destacados</h3>
 
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-3">
                 <p class="fw-semibold text-center">¡Los productos más destacados de nuestra tienda!</p>
                 <a href="<?= BASE_URL ?>productos" class="btn btn-primary">Ver todos <i class="bi bi-arrow-right"></i></a>
             </div>
@@ -115,7 +116,6 @@
 
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -186,7 +186,6 @@
     </section>
 
     <!-- Marcas -->
-    <!-- Marcas -->
     <section class="bg-white py-5">
         <div class="container-lg text-center mb-5">
             <h3 class="fw-bold text-primary mb-4">Marcas con las que trabajamos</h3>
@@ -216,7 +215,7 @@
                         <img src="<?= $url ?>" class="brand-logo" alt="<?= $marca ?>">
                     <?php endforeach; ?>
 
-                    <!-- duplicado para animación infinita -->
+                    <!-- Duplicado para animación infinita -->
                     <?php foreach ($logos as $marca => $url): ?>
                         <img src="<?= $url ?>" class="brand-logo" alt="<?= $marca ?>">
                     <?php endforeach; ?>
@@ -226,7 +225,7 @@
         </div>
     </section>
 
-
+    <!-- Footer -->
     <?php include __DIR__ . '/../layouts/landing/footer.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>

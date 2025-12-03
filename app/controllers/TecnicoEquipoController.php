@@ -4,6 +4,7 @@ require_once __DIR__ . '/../models/EquipoModel.php';
 require_once __DIR__ . '/../models/ClienteModel.php';
 require_once __DIR__ . '/../core/TecnicoPanelBase.php';
 
+//Gestion de equipos desde tecnico
 class TecnicoEquipoController extends TecnicoPanelBase
 {
     public function index()
@@ -236,21 +237,15 @@ class TecnicoEquipoController extends TecnicoPanelBase
         exit;
     }
 
-    public function download($equipoId)
+    public function download($equipoId) //para pdf
     {
-        // Validar que el técnico tenga permiso sobre este equipo (opcional pero recomendado)
         if (!is_numeric($equipoId)) {
             $this->error404();
         }
 
-        // Aquí puedes validar que el equipo pertenezca al técnico logueado
-        // (si ya tienes esa lógica en otro método, reutilízala)
-
-        // Invocar el generador de PDF
         require_once __DIR__ . '/PdfController.php';
         $pdfController = new PdfController();
         $pdfController->equipo($equipoId);
-        // Nota: PdfController::equipo() hace exit(), así que nada después se ejecuta
     }
 
     private function error404()

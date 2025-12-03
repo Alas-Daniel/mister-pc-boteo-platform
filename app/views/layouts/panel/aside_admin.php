@@ -1,11 +1,9 @@
-<!-- Aside Admin Inicia -->
+<!-- Aside Administrador -->
 <aside class="d-flex flex-column flex-md-row">
     <div class="sidebar d-flex flex-row flex-md-column p-3 bg-primary justify-content-between align-items-center"
         style="min-width: 95px;">
 
         <div class="d-flex flex-row flex-md-column gap-3">
-            <!-- En /app/views/layouts/panel/aside_admin.php -->
-
             <a href="<?= BASE_URL ?>admin/panel" class="nav-link text-center text-white rounded d-flex flex-column">
                 <i class="bi bi-house-door-fill fs-3"></i>
                 <span>Inicio</span>
@@ -16,7 +14,6 @@
                 <span>Equipos</span>
             </a>
 
-            <!-- Técnicos (alternativa segura) -->
             <a href="<?= BASE_URL ?>admin/tecnicos" class="nav-link text-center text-white rounded d-flex flex-column">
                 <i class="bi bi-gear-fill fs-3"></i>
                 <span>Técnicos</span>
@@ -43,7 +40,7 @@
             </a>
         </div>
 
-        <div class="ms-md-0 ms-auto mb-md-4">
+        <div class="ms-3 ms-md-0  mb-md-4">
             <a href="<?= BASE_URL ?>"
                 class="nav-link text-center text-white d-flex flex-column mb-md-5">
                 <i class="bi bi-box-arrow-left fs-2"></i>
@@ -52,4 +49,3 @@
         </div>
     </div>
 </aside>
-<!-- Aside Admin Finaliza -->

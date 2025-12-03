@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../models/EmpleadoModel.php';
 
+// Gestion de empleados en admin
 class EmpleadoController extends Controller
 {
     private $db;

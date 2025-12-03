@@ -16,5 +16,6 @@
             <i class="bi bi-house-door me-2"></i> Volver al inicio
         </a>
     </div>
+    
 </body>
 </html>

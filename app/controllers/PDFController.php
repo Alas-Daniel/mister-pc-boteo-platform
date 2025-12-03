@@ -4,19 +4,18 @@ require_once __DIR__ . '/../../lib/dompdf/autoload.inc.php';
 
 use Dompdf\Dompdf;
 
+// Controller para generar PDF
 class PdfController
 {
     private $db;
 
     public function __construct()
     {
-        // No se inicia sesión aquí porque la validación se hace en el controlador que llama (TecnicoEquipoController o EquipoController)
         $this->db = Database::getConnection();
     }
 
     public function equipo($equipo_id)
     {
-        // --- Limpieza crítica: asegurar que no haya salida previa ---
         if (ob_get_level()) {
             ob_clean();
         }
@@ -24,16 +23,13 @@ class PdfController
             ob_end_clean();
         }
 
-        // Desactivar errores visibles (evita que Notices se metan en el PDF)
         error_reporting(0);
         ini_set('display_errors', 0);
 
-        // Validación básica de ID
         if (!is_numeric($equipo_id) || $equipo_id <= 0) {
             return;
         }
 
-        // Consulta específica para el PDF, con aliases que coinciden EXACTAMENTE con la vista
         $sql = "SELECT 
                     c.Nombre AS propietario,
                     e.FechaIngreso AS fecha_ingreso,
@@ -73,24 +69,22 @@ class PdfController
             $stmt->execute([$equipo_id]);
             $equipo = $stmt->fetch(PDO::FETCH_ASSOC);
         } catch (Exception $e) {
-            return; // No mostrar errores en el PDF
+            return;
         }
 
         if (!$equipo) {
             return;
         }
 
-        // Capturar HTML del PDF
         ob_start();
         include __DIR__ . '/../views/pdf/equipo.php';
         $html = ob_get_clean();
 
-        // Verificar que no se hayan enviado encabezados (si sí, no se puede enviar PDF)
         if (headers_sent()) {
             return;
         }
 
-        // Generar y enviar PDF
+        // Generar PDF
         $dompdf = new Dompdf();
         $dompdf->loadHtml($html);
         $dompdf->setPaper('letter', 'portrait');

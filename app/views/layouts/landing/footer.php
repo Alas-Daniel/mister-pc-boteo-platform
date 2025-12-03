@@ -4,13 +4,12 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Verificar si hay usuario logueado
 $loggedIn = isset($_SESSION['usuario']);
 $usuario_rol = $loggedIn ? $_SESSION['usuario']['rol'] : null;
 $usuario_nombre = $loggedIn ? $_SESSION['usuario']['nombre'] : null;
 ?>
 
-<!-- Footer inicia -->
+<!-- Footer -->
 <footer class="bg-light pt-5">
     <div class="container-lg">
         <div class="row gy-4 text-start">
@@ -46,9 +45,9 @@ $usuario_nombre = $loggedIn ? $_SESSION['usuario']['nombre'] : null;
             <div class="col-6 col-md-3">
                 <h6 class="fw-semibold text-primary">Servicios</h6>
                 <ul class="list-unstyled mt-3">
-                    <li><a href="#" class="footer-link">Mantenimiento</a></li>
-                    <li><a href="#" class="footer-link">Reparación de equipos</a></li>
-                    <li><a href="#" class="footer-link">Venta de repuestos</a></li>
+                    <li><a href="<?= BASE_URL ?>servicios" class="footer-link">Mantenimiento</a></li>
+                    <li><a href="<?= BASE_URL ?>servicios" class="footer-link">Reparación de equipos</a></li>
+                    <li><a href="<?= BASE_URL ?>servicios" class="footer-link">Venta de repuestos</a></li>
                 </ul>
             </div>
 
@@ -70,7 +69,6 @@ $usuario_nombre = $loggedIn ? $_SESSION['usuario']['nombre'] : null;
                     </li>
                 </ul>
             </div>
-
         </div>
 
         <hr class="mt-5">

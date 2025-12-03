@@ -1,5 +1,6 @@
 <?php
 
+// Controlador base para el tecnico
 class TecnicoPanelBase extends Controller
 {
     protected $db;

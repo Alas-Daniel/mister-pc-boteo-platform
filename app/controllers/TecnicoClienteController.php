@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../models/ClienteModel.php';
 require_once __DIR__ . '/../core/TecnicoPanelBase.php';
 
+//Gestion de clientes tecnico
 class TecnicoClienteController extends TecnicoPanelBase
 {
     private $clienteModel;

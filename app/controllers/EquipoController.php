@@ -5,6 +5,8 @@ require_once __DIR__ . '/../models/ClienteModel.php';
 require_once __DIR__ . '/../models/UsuarioModel.php';
 require_once __DIR__ . '/../core/AdminController.php';
 
+
+// Gestion de equipos en admin
 class EquipoController extends AdminController
 {
     public function index()
@@ -236,23 +238,20 @@ class EquipoController extends AdminController
         exit;
     }
 
-    public function download($equipoId)
+    public function download($equipoId) //para pdf
     {
         if (!is_numeric($equipoId) || $equipoId <= 0) {
             $this->error404();
         }
 
-        // Validar que el usuario sea admin (opcional, pero buena práctica)
         session_start();
         if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'admin') {
             $this->error404();
         }
 
-        // Reutilizar el mismo PdfController
         require_once __DIR__ . '/PdfController.php';
         $pdfController = new PdfController();
         $pdfController->equipo($equipoId);
-        // exit() ya está en PdfController
     }
 
     private function error404()

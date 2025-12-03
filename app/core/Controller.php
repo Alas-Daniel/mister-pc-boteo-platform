@@ -1,5 +1,6 @@
 <?php
 
+//Controlador base
 class Controller
 {
     protected function view($view, $data = [])

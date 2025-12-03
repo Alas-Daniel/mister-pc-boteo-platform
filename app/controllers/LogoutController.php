@@ -1,5 +1,6 @@
 <?php
 
+//Controller de cerrar sesión
 class LogoutController extends Controller
 {
     public function index()

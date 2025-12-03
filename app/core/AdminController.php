@@ -1,4 +1,6 @@
 <?php
+
+// Controlador base para administrador
 class AdminController extends Controller
 {
     protected $db;

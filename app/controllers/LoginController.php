@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../models/UsuarioModel.php';
 
+//Controller de Login
 class LoginController extends Controller
 {
     private $db;

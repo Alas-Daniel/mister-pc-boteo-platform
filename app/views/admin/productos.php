@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 
+<!-- Head -->
 <?php include __DIR__ . '/../layouts/panel/head.php'; ?>
 
 <body class="vh-100 d-flex flex-column">
 
-    <?php include __DIR__ . '/../layouts/panel/header.php'; ?>
     <!-- Header -->
+    <?php include __DIR__ . '/../layouts/panel/header.php'; ?>
+
 
     <div class="flex-grow-1 d-flex flex-column flex-md-row" style="min-height: 0;">
 
+        <!-- Aside admin -->
         <?php include __DIR__ . '/../layouts/panel/aside_admin.php'; ?>
-        <!-- Aside -->
 
         <!-- Productos Inicia -->
         <main class="flex-grow-1 overflow-auto p-4">
@@ -48,20 +50,20 @@
                 </form>
 
                 <div class="mt-3 mt-md-auto">
-                    <!-- Botón Productos Desactivados -->
-                    <a class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalProductosDesactivados">
-                        <i class="bi bi-archive"></i> Desactivados
-                    </a>
-
-                    <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAgregarProveedor">
-                        <i class="bi bi-truck"></i> Proveedores
-                    </a>
-                    <a href="#" class="btn btn-warning text-white" data-bs-toggle="modal" data-bs-target="#modalCategorias">
-                        <i class="bi bi-tags"></i> Categorías
-                    </a>
-                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAgregarProducto">
-                        <i class="bi bi-plus"></i> Agregar producto
-                    </a>
+                    <div class="d-flex flex-wrap justify-content-end gap-2">
+                        <a class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalProductosDesactivados">
+                            <i class="bi bi-archive"></i> Desactivados
+                        </a>
+                        <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAgregarProveedor">
+                            <i class="bi bi-truck"></i> Proveedores
+                        </a>
+                        <a class="btn btn-warning text-white" data-bs-toggle="modal" data-bs-target="#modalCategorias">
+                            <i class="bi bi-tags"></i> Categorías
+                        </a>
+                        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAgregarProducto">
+                            <i class="bi bi-plus"></i> Agregar producto
+                        </a>
+                    </div>
                 </div>
             </div>
 

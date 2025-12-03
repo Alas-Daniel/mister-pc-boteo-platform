@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 
+<!-- Head -->
 <?php include __DIR__ . '/../../layouts/panel/head.php'; ?>
 
 <body class="vh-100 d-flex flex-column">
 
+    <!-- Header -->
     <?php include __DIR__ . '/../../layouts/panel/header.php'; ?>
     <div class="flex-grow-1 d-flex flex-column flex-md-row" style="min-height: 0;">
+
+        <!-- Aside Tecnico -->
         <?php include __DIR__ . '/../../layouts/panel/aside_tecnico.php'; ?>
 
         <main class="flex-grow-1 overflow-auto p-4">
@@ -42,14 +46,14 @@
 
                         <div class="col-md-4">
                             <label class="form-label fw-semibold">Fecha de ingreso:</label>
-                            <input type="date" name="fecha_ingreso" class="form-control" 
-                                   value="<?= htmlspecialchars($equipo['fecha_ingreso']) ?>" disabled>
+                            <input type="date" name="fecha_ingreso" class="form-control"
+                                value="<?= htmlspecialchars($equipo['fecha_ingreso']) ?>" disabled>
                         </div>
 
                         <div class="col-md-4">
                             <label class="form-label fw-semibold text-success">Fecha de Finalización:</label>
-                            <input type="date" name="fecha_finalizacion" class="form-control" 
-                                   value="<?= htmlspecialchars($equipo['fecha_finalizacion'] ?? '') ?>">
+                            <input type="date" name="fecha_finalizacion" class="form-control"
+                                value="<?= htmlspecialchars($equipo['fecha_finalizacion'] ?? '') ?>">
                         </div>
 
                         <div class="col-md-4 mt-3">
@@ -77,18 +81,18 @@
                     <div class="row mb-3">
                         <div class="col-md-4">
                             <label class="form-label fw-semibold">Nombre de equipo:</label>
-                            <input type="text" name="nombre_equipo" class="form-control" 
-                                   value="<?= htmlspecialchars($equipo['nombre_equipo']) ?>" required>
+                            <input type="text" name="nombre_equipo" class="form-control"
+                                value="<?= htmlspecialchars($equipo['nombre_equipo']) ?>" required>
                         </div>
                         <div class="col-md-4">
                             <label class="form-label fw-semibold">Marca:</label>
-                            <input type="text" name="marca" class="form-control" 
-                                   value="<?= htmlspecialchars($equipo['marca'] ?? '') ?>">
+                            <input type="text" name="marca" class="form-control"
+                                value="<?= htmlspecialchars($equipo['marca'] ?? '') ?>">
                         </div>
                         <div class="col-md-4">
                             <label class="form-label fw-semibold">Modelo:</label>
-                            <input type="text" name="modelo" class="form-control" 
-                                   value="<?= htmlspecialchars($equipo['modelo'] ?? '') ?>">
+                            <input type="text" name="modelo" class="form-control"
+                                value="<?= htmlspecialchars($equipo['modelo'] ?? '') ?>">
                         </div>
                     </div>
 
@@ -96,43 +100,43 @@
                         <div class="col-md-4">
                             <h6>MEMORIA RAM</h6>
                             <label class="form-label fw-semibold">Tipo:</label>
-                            <input type="text" name="ram_tipo" class="form-control mb-2" 
-                                   value="<?= htmlspecialchars($equipo['ram_tipo'] ?? '') ?>">
+                            <input type="text" name="ram_tipo" class="form-control mb-2"
+                                value="<?= htmlspecialchars($equipo['ram_tipo'] ?? '') ?>">
                             <label class="form-label fw-semibold">Capacidad:</label>
-                            <input type="text" name="ram_capacidad" class="form-control mb-2" 
-                                   value="<?= htmlspecialchars($equipo['ram_capacidad'] ?? '') ?>">
+                            <input type="text" name="ram_capacidad" class="form-control mb-2"
+                                value="<?= htmlspecialchars($equipo['ram_capacidad'] ?? '') ?>">
                             <label class="form-label fw-semibold">Velocidad:</label>
-                            <input type="text" name="ram_velocidad" class="form-control mb-2" 
-                                   value="<?= htmlspecialchars($equipo['ram_velocidad'] ?? '') ?>">
+                            <input type="text" name="ram_velocidad" class="form-control mb-2"
+                                value="<?= htmlspecialchars($equipo['ram_velocidad'] ?? '') ?>">
                             <label class="form-label fw-semibold">Slots vacíos:</label>
-                            <input type="number" name="ram_slots_vacios" class="form-control" 
-                                   value="<?= htmlspecialchars($equipo['ram_slots_vacios'] ?? '') ?>">
+                            <input type="number" name="ram_slots_vacios" class="form-control"
+                                value="<?= htmlspecialchars($equipo['ram_slots_vacios'] ?? '') ?>">
                         </div>
 
                         <div class="col-md-4">
                             <h6>PROCESADOR</h6>
                             <label class="form-label fw-semibold">Marca:</label>
-                            <input type="text" name="cpu_marca" class="form-control mb-2" 
-                                   value="<?= htmlspecialchars($equipo['cpu_marca'] ?? '') ?>">
+                            <input type="text" name="cpu_marca" class="form-control mb-2"
+                                value="<?= htmlspecialchars($equipo['cpu_marca'] ?? '') ?>">
                             <label class="form-label fw-semibold">Modelo:</label>
-                            <input type="text" name="cpu_modelo" class="form-control mb-2" 
-                                   value="<?= htmlspecialchars($equipo['cpu_modelo'] ?? '') ?>">
+                            <input type="text" name="cpu_modelo" class="form-control mb-2"
+                                value="<?= htmlspecialchars($equipo['cpu_modelo'] ?? '') ?>">
                             <label class="form-label fw-semibold">Velocidad:</label>
-                            <input type="text" name="cpu_velocidad" class="form-control" 
-                                   value="<?= htmlspecialchars($equipo['cpu_velocidad'] ?? '') ?>">
+                            <input type="text" name="cpu_velocidad" class="form-control"
+                                value="<?= htmlspecialchars($equipo['cpu_velocidad'] ?? '') ?>">
                         </div>
 
                         <div class="col-md-4">
                             <h6>SISTEMA OPERATIVO</h6>
                             <label class="form-label fw-semibold">Nombre:</label>
-                            <input type="text" name="so_nombre" class="form-control mb-2" 
-                                   value="<?= htmlspecialchars($equipo['so_nombre'] ?? '') ?>">
+                            <input type="text" name="so_nombre" class="form-control mb-2"
+                                value="<?= htmlspecialchars($equipo['so_nombre'] ?? '') ?>">
                             <label class="form-label fw-semibold">Versión:</label>
-                            <input type="text" name="so_version" class="form-control mb-2" 
-                                   value="<?= htmlspecialchars($equipo['so_version'] ?? '') ?>">
+                            <input type="text" name="so_version" class="form-control mb-2"
+                                value="<?= htmlspecialchars($equipo['so_version'] ?? '') ?>">
                             <label class="form-label fw-semibold">Arquitectura:</label>
-                            <input type="text" name="so_arquitectura" class="form-control" 
-                                   value="<?= htmlspecialchars($equipo['so_arquitectura'] ?? '') ?>">
+                            <input type="text" name="so_arquitectura" class="form-control"
+                                value="<?= htmlspecialchars($equipo['so_arquitectura'] ?? '') ?>">
                         </div>
                     </div>
 
@@ -140,25 +144,25 @@
                         <div class="col-md-4">
                             <h6>DISCO DURO</h6>
                             <label class="form-label fw-semibold">Capacidad:</label>
-                            <input type="text" name="almacenamiento_cap" class="form-control mb-2" 
-                                   value="<?= htmlspecialchars($equipo['almacenamiento_cap'] ?? '') ?>">
+                            <input type="text" name="almacenamiento_cap" class="form-control mb-2"
+                                value="<?= htmlspecialchars($equipo['almacenamiento_cap'] ?? '') ?>">
                             <label class="form-label fw-semibold"># Particiones:</label>
-                            <input type="text" name="almacenamiento_particiones" class="form-control" 
-                                   value="<?= htmlspecialchars($equipo['almacenamiento_particiones'] ?? '') ?>">
+                            <input type="text" name="almacenamiento_particiones" class="form-control"
+                                value="<?= htmlspecialchars($equipo['almacenamiento_particiones'] ?? '') ?>">
                         </div>
 
                         <div class="col-md-4">
                             <h6>TARJETA MADRE</h6>
                             <label class="form-label fw-semibold">Modelo:</label>
-                            <input type="text" name="placa_modelo" class="form-control" 
-                                   value="<?= htmlspecialchars($equipo['placa_modelo'] ?? '') ?>">
+                            <input type="text" name="placa_modelo" class="form-control"
+                                value="<?= htmlspecialchars($equipo['placa_modelo'] ?? '') ?>">
                         </div>
 
                         <div class="col-md-4">
                             <h6>PUERTOS</h6>
                             <label class="form-label fw-semibold">Puertos:</label>
-                            <input type="text" name="puertos" class="form-control" 
-                                   value="<?= htmlspecialchars($equipo['puertos'] ?? '') ?>">
+                            <input type="text" name="puertos" class="form-control"
+                                value="<?= htmlspecialchars($equipo['puertos'] ?? '') ?>">
                         </div>
                     </div>
 

@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../models/UsuarioModel.php';
 
+//Gestion de usuarios en admin
 class UsuarioController extends Controller
 {
     private $db;

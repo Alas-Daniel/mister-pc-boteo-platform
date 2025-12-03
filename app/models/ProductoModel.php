@@ -1,5 +1,6 @@
 <?php
 
+//Modelo para producto
 class ProductoModel
 {
     private $db;

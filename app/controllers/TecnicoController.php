@@ -1,5 +1,6 @@
 <?php
 
+//Gestion de Tecnicos admin
 class TecnicoController extends Controller
 {
     private $db;

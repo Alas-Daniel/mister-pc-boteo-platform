@@ -1,5 +1,6 @@
 <?php
 
+// Modelo para categorias
 class CategoriaModel
 {
     private $db;

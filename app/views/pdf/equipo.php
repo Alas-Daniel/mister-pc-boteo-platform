@@ -1,3 +1,4 @@
+<!-- Codigo para generar PDF -->
 <table width="100%" style="border: none; margin-bottom: 10px;">
     <tr>
         <td style="text-align:center; vertical-align:middle;">

@@ -10,15 +10,13 @@ if (!isset($_SESSION['usuario'])) {
     exit;
 }
 
-// Guardar datos del usuario de manera segura
 $usuario_nombre = $_SESSION['usuario']['nombre'] ?? 'Invitado';
 $usuario_rol    = $_SESSION['usuario']['rol'] ?? 'Desconocido';
-
 ?>
 
 <!-- Header de Panel -->
 <header class="bg-primary text-white py-2 px-4 d-flex justify-content-between align-items-center">
-    <!-- Logo que apunta al inicio del panel según rol -->
+    <!-- Logo -->
     <a href="<?= BASE_URL ?>">
         <img src="https://res.cloudinary.com/drztldzvn/image/upload/v1757213272/Logo_Mister_PC_bhghmg.png"
             alt="Logo Mister PC Boteo" height="60">

@@ -1,5 +1,6 @@
 <?php
 
+// Conexion a base de datos
 class Database {
     private static $instance = null;
 

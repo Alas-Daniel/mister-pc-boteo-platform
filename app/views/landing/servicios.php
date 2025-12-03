@@ -6,9 +6,10 @@
 
 <body>
 
+    <!-- Header -->
     <?php include __DIR__ . '/../layouts/landing/header.php'; ?>
 
-    <!-- Hero Inicia -->
+    <!-- Hero -->
     <section class="hero position-relative text-white px-2 px-lg-0">
         <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50"></div>
         <div class="container-lg h-100 position-relative">
@@ -20,9 +21,8 @@
             </div>
         </div>
     </section>
-    <!-- Hero Finaliza -->
 
-    <!-- Servicios Inicia -->
+    <!-- Servicios -->
     <section class="py-5 text-center bg-secondary px-2 px-lg-0 ">
         <div class="container-xl">
             <h3 class="fw-semibold text-primary mb-5">Servicios especializados</h3>
@@ -46,7 +46,7 @@
                     </div>
                 </div>
 
-                <!-- Reparación de hardware -->
+                <!-- Mantenimiento -->
                 <div class="col-lg-4">
                     <div class=" bg-white p-5 rounded h-100">
                         <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-3"
@@ -65,7 +65,7 @@
                     </div>
                 </div>
 
-                <!-- Reparación de hardware -->
+                <!-- Reparación de software -->
                 <div class="col-lg-4">
                     <div class=" bg-white p-5 rounded h-100">
                         <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-3"
@@ -86,9 +86,8 @@
             </div>
         </div>
     </section>
-    <!-- Servicios Finaliza -->
 
-    <!-- Banner Inicia -->
+    <!-- Banner -->
     <section class="bg-primary">
         <div class="container-lg py-5 text-center">
             <div class="w-75 mx-auto">
@@ -100,14 +99,14 @@
             </div>
         </div>
     </section>
-    <!-- Banner Finaliza -->
 
+    <!-- Footer -->
     <?php include __DIR__ . '/../layouts/landing/footer.php'; ?>
 
-</body>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
     crossorigin="anonymous"></script>
+
+</body>
 
 </html>

@@ -6,6 +6,7 @@
 
 <body>
 
+    <!-- Header -->
     <?php include __DIR__ . '/../layouts/landing/header.php'; ?>
 
     <!-- Hero Inicia -->

@@ -1,6 +1,6 @@
 <?php
-// app/models/EquipoModel.php
 
+// Modelo para equipo
 class EquipoModel
 {
     private $db;

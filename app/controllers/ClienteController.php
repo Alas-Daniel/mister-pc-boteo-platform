@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../models/ClienteModel.php';
 
+// Gestion de cliente en admin
 class ClienteController extends Controller
 {
     private $db;

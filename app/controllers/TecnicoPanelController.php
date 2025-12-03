@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../core/TecnicoPanelBase.php';
 
+// Panel de tecnico
 class TecnicoPanelController extends TecnicoPanelBase
 {
     public function index()

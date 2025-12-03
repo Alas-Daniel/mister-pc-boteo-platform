@@ -1,5 +1,6 @@
 <?php
 
+//Modelo para proveedor
 class ProveedorModel
 {
     private $db;

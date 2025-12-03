@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 
+<!-- Head -->
 <?php include __DIR__ . '/../layouts/panel/head.php'; ?>
 
 <body class="vh-100 d-flex flex-column">
 
+    <!-- Header -->
     <?php include __DIR__ . '/../layouts/panel/header.php'; ?>
     <div class="flex-grow-1 d-flex flex-column flex-md-row" style="min-height: 0;">
+
+        <!-- Aside Tecnico -->
         <?php include __DIR__ . '/../layouts/panel/aside_tecnico.php'; ?>
 
         <!-- Main Productos Inicia -->
@@ -89,8 +93,6 @@
                 </table>
             </div>
         </main>
-        <!-- Main Productos Finaliza -->
-        <!-- Main Productos Finaliza -->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>

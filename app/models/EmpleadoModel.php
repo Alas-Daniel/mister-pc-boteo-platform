@@ -1,5 +1,6 @@
 <?php
 
+// Modelo para empleado
 class EmpleadoModel
 {
     private $db;

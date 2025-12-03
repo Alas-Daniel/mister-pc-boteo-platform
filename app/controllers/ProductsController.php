@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../models/ProductoModel.php';
 require_once __DIR__ . '/../models/CategoriaModel.php';
 
+//Controller de Productos (landing)
 class ProductsController extends Controller
 {
     private $db;
