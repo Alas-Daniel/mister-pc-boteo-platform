@@ -139,7 +139,7 @@
                             <input type="text" class="form-control" name="nombre" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Teléfono</label>
+                            <label class="form-label">Teléfono (sin guiones) *</label>
                             <input type="text" class="form-control" name="telefono">
                         </div>
                         <div class="mb-3">

@@ -44,7 +44,7 @@
                             <i class="bi bi-tools"></i>
                         </div>
                         <h5 class="text-primary mt-3">Mantenimiento</h5>
-                        <p class="my-3">Solucionamos problemas de hardware y software en computadoras de todas las marcas.</p>
+                        <p class="my-3">Solucionamos problemas de hardware y software en computadoras.</p>
                         <a href="<?= BASE_URL ?>contacto" class="btn btn-primary mt-2">Cotizar Ahora</a>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                             <i class="bi bi-cpu"></i>
                         </div>
                         <h5 class="text-primary mt-3">Venta de repuestos</h5>
-                        <p class="my-3">Repuestos originales de las mejores marcas.</p>
+                        <p class="my-3">Repuestos y productos originales de las mejores marcas.</p>
                         <a href="<?= BASE_URL ?>productos" class="btn btn-primary mt-2">Ver Repuestos</a>
                     </div>
                 </div>
@@ -92,28 +92,39 @@
 
             <div class="product-container">
                 <div class="product-scroll">
-
                     <?php if (!empty($productos_destacados)): ?>
                         <?php foreach ($productos_destacados as $prod): ?>
-                            <div class="card">
-                                <img src="<?= htmlspecialchars($prod['imagen']) ?>" class="img-card"
+                            <div class="card d-flex flex-column h-100">
+                                <img src="<?= htmlspecialchars($prod['imagen']) ?>"
+                                    class="img-card"
                                     alt="<?= htmlspecialchars($prod['nombre']) ?>">
 
                                 <div class="card-body">
                                     <span class="product-label"><?= htmlspecialchars($prod['categoria_nombre']) ?></span>
-
                                     <h5 class="mt-1 fw-semibold"><?= htmlspecialchars($prod['nombre']) ?></h5>
+                                    <p class="text-primary fw-semibold">$<?= number_format($prod['precio'], 2) ?></p>
+                                </div>
 
-                                    <p class="text-primary fw-semibold">
-                                        $<?= number_format($prod['precio'], 2) ?>
-                                    </p>
+                                <?php
+                                $nombre_producto = htmlspecialchars_decode($prod['nombre'], ENT_QUOTES);
+                                $mensaje = "Hola, vi este producto destacado en su web:\n\n" .
+                                    "🔹 " . $nombre_producto . "\n" .
+                                    "🔹 Precio: $" . number_format($prod['precio'], 2) . "\n\n" .
+                                    "¿Está disponible?";
+                                $mensaje_codificado = rawurlencode($mensaje);
+                                $whatsapp_url = "https://wa.me/50370491519?text=" . $mensaje_codificado;
+                                ?>
+
+                                <div class="card-footer p-2">
+                                    <a href="<?= $whatsapp_url ?>" target="_blank" class="btn btn-success w-100">
+                                        <i class="bi bi-whatsapp"></i> Comprar
+                                    </a>
                                 </div>
                             </div>
                         <?php endforeach; ?>
                     <?php else: ?>
                         <p class="text-center w-100">No hay productos destacados por el momento.</p>
                     <?php endif; ?>
-
                 </div>
             </div>
         </div>

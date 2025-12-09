@@ -43,13 +43,32 @@
                 <div class="row g-4">
                     <?php foreach ($productos as $producto): ?>
                         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="card h-100">
-                                <img src="<?= htmlspecialchars($producto['imagen']) ?>" class="img-card"
-                                    alt="<?= htmlspecialchars($producto['nombre']) ?>" style="height:200px; object-fit:cover;">
-                                <div class="card-body bg-terciary">
+                            <div class="card h-100 d-flex flex-column">
+                                <img src="<?= htmlspecialchars($producto['imagen']) ?>"
+                                    class="img-card"
+                                    alt="<?= htmlspecialchars($producto['nombre']) ?>"
+                                    style="height:200px; object-fit:cover;">
+
+                                <div class="card-body bg-terciary d-flex flex-column flex-grow-1">
                                     <span class="mb-2 product-label"><?= htmlspecialchars($producto['marca']) ?></span>
                                     <h5 class="mt-1 card-title-size fw-semibold"><?= htmlspecialchars($producto['nombre']) ?></h5>
                                     <p class="card-text text-primary fw-semibold">$<?= htmlspecialchars($producto['precio']) ?></p>
+                                </div>
+
+                                <?php
+                                $producto_nombre = htmlspecialchars_decode($producto['nombre'], ENT_QUOTES);
+                                $mensaje = "Hola, estoy interesado en comprar este producto:\n\n" .
+                                    "🔹 Producto: " . $producto_nombre . "\n" .
+                                    "🔹 Precio: $" . $producto['precio'] . "\n\n" .
+                                    "¿Lo tienen disponible?";
+                                $mensaje_codificado = rawurlencode($mensaje);
+                                $whatsapp_url = "https://wa.me/50370491519?text=" . $mensaje_codificado;
+                                ?>
+
+                                <div class="card-footer bg-terciary p-2">
+                                    <a href="<?= $whatsapp_url ?>" target="_blank" class="btn btn-success w-100">
+                                        <i class="bi bi-whatsapp"></i> Comprar
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +81,6 @@
             <?php endif; ?>
         </div>
     </section>
-    <!-- Nuestros Productos Finaliza -->
 
     <?php include __DIR__ . '/../layouts/landing/footer.php'; ?>
 

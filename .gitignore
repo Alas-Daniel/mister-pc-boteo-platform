@@ -1,18 +1,9 @@
 *.env
-config/config.php
-
-storage/logs/
-storage/uploads/
-
-.DS_Store
-Thumbs.db
 
 .vscode/
 .idea/
 *.swp
 *.swo
-
-vendor/
 
 *.cache
 *.log

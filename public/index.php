@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 // Cargar configuración
 require_once __DIR__ . '/../config/config.php';
 

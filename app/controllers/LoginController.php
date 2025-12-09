@@ -10,7 +10,9 @@ class LoginController extends Controller
 
     public function __construct()
     {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         $this->db = Database::getConnection();
         $this->userModel = new UsuarioModel($this->db);
     }

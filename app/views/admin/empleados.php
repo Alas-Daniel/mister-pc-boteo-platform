@@ -118,7 +118,7 @@
                                                         maxlength="10" required>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="form-label">Teléfono</label>
+                                                    <label class="form-label">Teléfono (sin guiones) *</label>
                                                     <input type="text" class="form-control" name="telefono"
                                                         value="<?= htmlspecialchars($emp['telefono'] ?? '') ?>">
                                                 </div>

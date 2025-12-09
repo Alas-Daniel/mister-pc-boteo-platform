@@ -152,3 +152,29 @@ CREATE TABLE REPARACION (
     FechaRegistro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_reparacion_equipo FOREIGN KEY (EquipoId) REFERENCES EQUIPO(EquipoId) ON DELETE CASCADE
 );
+
+-- Datos de ingreso para primera vez
+
+-- 1. Crear CARGO: Gerente General
+INSERT INTO CARGO (Cargo)
+VALUES ('Gerente General');
+
+
+-- 2. Crear EMPLEADO por defecto
+INSERT INTO EMPLEADO (Nombre, Telefono, DUI, Direccion, CargoId)
+VALUES (
+    'Administrador General',
+    '0000-0000',
+    '00000000-0',
+    'Sistema',
+    1   -- CargoId = Gerente General
+);
+
+-- 3. Crear USUARIO administrador
+INSERT INTO USUARIO (EmpleadoId, Email, Clave, Rol)
+VALUES (
+    1,                           -- EmpleadoId creado arriba
+    'admin1@gmail.com',         -- Correo para iniciar sesión
+    SHA2('admin123', 256),       -- Contraseña (>6 caracteres)
+    'admin'                      -- Rol administrador
+);

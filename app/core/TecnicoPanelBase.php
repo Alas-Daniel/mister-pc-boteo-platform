@@ -8,7 +8,9 @@ class TecnicoPanelBase extends Controller
 
     public function __construct()
     {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'tecnico') {
             header('Location: ' . BASE_URL . 'login');
             exit;

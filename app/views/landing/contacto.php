@@ -29,9 +29,29 @@
                 <!-- Formulario Inicia-->
                 <div class="col-lg-8 mb-4">
                     <div class="bg-white p-4 rounded shadow-sm">
+
+                        <!-- Mensajes de éxito o error para mensaje-->
+                        <?php if (!empty($_SESSION['exito'])): ?>
+                            <div class="container-lg mb-4">
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <?= htmlspecialchars($_SESSION['exito']) ?>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+                                </div>
+                            </div>
+                            <?php unset($_SESSION['exito']); ?>
+                        <?php elseif (!empty($_SESSION['error'])): ?>
+                            <div class="container-lg mb-4">
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <?= htmlspecialchars($_SESSION['error']) ?>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+                                </div>
+                            </div>
+                            <?php unset($_SESSION['error']); ?>
+                        <?php endif; ?>
+
                         <h4 class="text-primary fw-bold mb-4">Envíanos un mensaje</h4>
 
-                        <form class="needs-validation" novalidate>
+                        <form class="needs-validation" novalidate method="POST" action="<?= BASE_URL ?>contacto/enviar">
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <label class="form-label small">1. Nombre completo</label>
@@ -95,10 +115,9 @@
                         <h6 class="text-primary fw-bold mb-3">Síguenos</h6>
                         <a href="#" class="text-primary fs-4 me-3"><i class="bi bi-facebook"></i></a>
                         <a href="#" class="text-primary fs-4 me-3"><i class="bi bi-whatsapp"></i></a>
-                        <a href="#" class="text-primary fs-4"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-primary fs-4"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
-                <!-- Información adicional Termina -->
             </div>
         </div>
     </section>
@@ -127,4 +146,5 @@
     </script>
 
 </body>
+
 </html>

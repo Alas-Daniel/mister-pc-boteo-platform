@@ -1,104 +1,111 @@
-# Mister PC Boteo 
+# Mister PC Boteo
 
-Mister PC Boteo es una plataforma web  en desarrollo diseñada para gestionar eficientemente los servicios de reparación, mantenimiento y venta de productos tecnológicos. El sistema cuenta con dos paneles principales: **Administrador** y **Técnico**.
+Mister PC Boteo es una plataforma web en desarrollo diseñada para gestionar de forma eficiente los servicios de reparación, mantenimiento y venta de productos tecnológicos. El sistema cuenta con dos paneles principales: Administrador y Técnico.
 
 ---
 
 ## Sobre Mister PC Boteo
 
-Mister PC Boteo es una empresa dedicada a la reparación, mantenimiento y venta de repuestos para computadoras, comprometida con ofrecer un servicio de calidad y confianza a sus clientes.
-
-Este proyecto fue desarrollado para apoyar y optimizar las operaciones de Mister PC Boteo.
+Mister PC Boteo es una empresa dedicada a la reparación, mantenimiento y venta de repuestos para computadoras. Este sistema fue desarrollado para optimizar y centralizar sus operaciones internas, mejorando la organización y experiencia de trabajo.
 
 ---
 
 ## Estructura del Proyecto
 
-- `panel_admin/`: Panel para el administrador del sistema.
-- `panel_tecnico/`: Panel para técnicos registrados.
+* `panel_admin/`: Panel principal para administración del sistema.
+* `panel_tecnico/`: Panel exclusivo para técnicos registrados.
 
 ---
 
 ## Panel de Administrador
 
-El panel de administrador es el núcleo de control de todo el sistema. Las funcionalidades principales incluyen:
+El panel de administrador es el centro de control del sistema. Sus funcionalidades principales incluyen:
 
--   **Gestión de Técnicos**:
-  - Registrar, editar o eliminar técnicos.
-  - Ver estado y actividad de cada técnico.
-  
--   **Gestión de Productos**:
-  - Agregar productos nuevos con información como: imagen, nombre, precio, categoría, tipo de presentación (unidad o caja), cantidad en stock, etc.
-  - Editar o eliminar productos existentes.
-  - Añadir nuevas categorias.
-  - Visualizar productos por categoría o disponibilidad.
-  
--   **Gestión de Equipos Asignados**:
-  - Asignar dispositivos (laptops, PCs, etc.) a los técnicos para reparación.
-  - Ver historial de dispositivos, reparaciones y cambios de estado.
-  - Agregar equipo, llevar seguimiento, editar y ver información del equipo.
+### Gestión de Técnicos
 
--   **Dashboard**:
-  - Visualización general del sistema: número de productos, técnicos activos, equipos en reparación, etc.
+* Registrar, editar o eliminar técnicos.
+* Consultar estado y actividad de cada técnico.
 
--   **Gestión de Usuarios**:
-  - Ver todos los usuarios registrados.
+### Gestión de Productos
 
----
+* Registrar productos con información como: imagen, nombre, precio, categoría, tipo de presentación (unidad o caja), stock, etc.
+* Editar o eliminar productos.
+* Crear nuevas categorías.
+* Filtrar productos por categoría o disponibilidad.
 
-##   Panel de Técnico
+### Gestión de Equipos
 
-El técnico inicia sesión en su panel personalizado, donde puede:
+* Registrar equipos enviados por clientes.
+* Asignar equipos a técnicos.
+* Ver historial de reparaciones y cambios de estado.
+* Editar y actualizar información del equipo.
 
--   **Ver Equipos Asignados**:
-  - Acceso a la lista de dispositivos que debe revisar o reparar.
-  - Ver detalles del equipo, asi como poder añadir un nuevo equipo y actualizar información.
+### Dashboard
 
--   **Actualizar Estado del Equipo**:
-  - Cambiar el estado (en reparación, reparado, entregado, etc.).
-  - Subir observaciones o adjuntar evidencia de reparación.
+* Resumen general del sistema: técnicos activos, productos disponibles, equipos en reparación, entre otros.
 
--   **Ver clientes**:
-  - Ver clientes, agregar un nuevo cliente.
+### Gestión de Usuarios
+
+* Ver todos los usuarios registrados en el sistema.
 
 ---
 
-##   Seguridad y Roles
+## Panel de Técnico
 
-El sistema gestiona tres tipos de roles con permisos específicos:
+El panel del técnico está orientado al trabajo operativo diario:
 
-| Rol         | Acceso a                           | Restricciones                        |
-|-------------|------------------------------------|--------------------------------------|
-| Admin       | Todo el sistema                    | Ninguna                              |
-| Técnico     | Solo equipos asignados, dashboard, clientes y productos | No puede acceder a otros módulos    |
+### Equipos Asignados
 
----
+* Ver equipos que debe revisar o reparar.
+* Añadir nuevos equipos.
+* Consultar y actualizar los detalles de cada equipo.
 
-##   Tecnologías Utilizadas
+### Actualización de Estado
 
-- **Frontend**: HTML5, Bootstrap 5, CSS3, JavaScript 
-- **Backend**: PHP 
-- **Base de Datos**: MariaDB 
-- **Hosting**: XAMPP
-- **Automatización**: n8n (en proceso)
+* Cambiar el estado del equipo (no iniciado, en proceso, finalizado, entregado).
+* Agregar observaciones o evidencia de reparación.
 
----
+### Gestión de Clientes
 
-##   Estado del Proyecto
-
-En desarrollo. Se están incorporando mejoras como:
-
-- Soporte para productos por unidad y por caja.
-- Implementación de funcionalidad backend.
-- Mejora de la interfaz móvil.
+* Ver lista de clientes.
+* Registrar nuevos clientes.
 
 ---
 
-##   Autores
+## Roles y Seguridad
 
-Desarrollado por:
-- Daniel Alas – Estudiante de Ingeniería en Sistemas y Computación.
-- Cesar Ramirez - Estudiante de Tecnico en Desarrollo de Software
+El sistema incluye roles con permisos específicos:
+
+| Rol     | Acceso                                             | Restricciones                              |
+| ------- | -------------------------------------------------- | ------------------------------------------ |
+| Admin   | Acceso total a todo el sistema                     | Ninguna                                    |
+| Técnico | Equipos asignados, dashboard, clientes y productos | No puede acceder a módulos administrativos |
+
+---
+
+## Tecnologías Utilizadas
+
+* Frontend: HTML5, CSS3, Bootstrap 5, JavaScript
+* Backend: PHP
+* Base de Datos: MariaDB
+* Hosting local: XAMPP
+* Librerias: DOMPDF, PHPMailer
+
+---
+
+## Estado del Proyecto
+
+Estado del Proyecto
+
+El sistema se encuentra finalizado en su primera versión estable. Actualmente incluye todas las funcionalidades principales para la gestión de técnicos, productos, equipos y clientes.
+
+---
+
+## Desarrolladores V1.0
+
+* Daniel Alas – Estudiante de Ingeniería en Sistemas y Computación.
+* Cesar Ramírez – Estudiante de Técnico en Desarrollo de Software.
+
+---
 
 © 2025 Mister PC Boteo. Todos los derechos reservados.
-
