@@ -173,8 +173,8 @@ VALUES (
 -- 3. Crear USUARIO administrador
 INSERT INTO USUARIO (EmpleadoId, Email, Clave, Rol)
 VALUES (
-    1,                           -- EmpleadoId creado arriba
-    'admin1@gmail.com',         -- Correo para iniciar sesión
-    SHA2('admin123', 256),       -- Contraseña (>6 caracteres)
-    'admin'                      -- Rol administrador
+    1,
+    'admin1@gmail.com',
+    '$2y$10$nwqr80SsfOsqFtcci6jqUelkSUN/X9tr8ba0J5R6ocoHWRng.BI9S',
+    'admin'
 );
